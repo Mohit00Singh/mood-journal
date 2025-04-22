@@ -1,0 +1,130 @@
+.calendar-container {
+    background: #fff;
+    padding: 24px;
+    max-width: 600px;
+    margin: auto;
+    justify-self: center;
+  }
+  
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 12px;
+  }
+  
+  .day-header {
+    font-weight: bold;
+    color: #666;
+  }
+  
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .calendar-header select {
+    margin: 0 5px;
+    padding: 5px;
+    font-size: 16px;
+  }
+  .calendar-day.empty {
+    visibility: hidden;
+  }
+  .calendar-day {
+    position: relative;
+    padding: 10px;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  /* Hover effect */
+  .calendar-day:hover {
+    background-color: #f3f4f6; /* light gray background */
+    transform: scale(1.05);    /* slight zoom-in */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* subtle shadow */
+  }
+  
+  .dot {
+    display: block;
+    width: 8px;
+    height: 8px;
+    margin: 4px auto 0;
+    border-radius: 50%;
+  }
+  .filter-icon {
+    cursor: pointer;
+    padding: 0 10px;
+  }
+  
+  .month-filter {
+    position: absolute;
+    top: 50px; /* Adjust based on your layout */
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 150px;
+    z-index: 10;
+  }
+  
+  select {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 14px;
+  }
+  
+  select:focus {
+    outline: none;
+    border-color: #0066cc;
+  }
+  
+  .calendar-container {
+    position: relative;
+  }
+  
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .month-display {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 1; /* Centers the text */
+  }
+  
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+  }
+  
+
+  .day-header {
+    font-weight: bold;
+  }
+  
+  .empty {
+    background-color: #f0f0f0;
+  }
+  

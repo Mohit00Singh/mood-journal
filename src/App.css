@@ -1,38 +1,160 @@
-.App {
-  text-align: center;
+/* Reset & Base Styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  transition: background 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+  background: linear-gradient(145deg, #fbc2a9, #f8a07b);
+  color: #333;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* App Container */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px;
+  border-radius: 30px;
+  background: linear-gradient(145deg, #fbc2a9, #f8a07b);
+  box-shadow: 10px 12px 25px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Header */
+.header {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+.header h1 {
+  font-size: 2rem;
+  color: #333;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.header button {
+  background-color: #fff;
+  border: none;
+  padding: 10px 16px;
+  margin-left: 10px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.header button:hover {
+  background-color: #f2f2f2;
+}
+
+/* Section spacing */
+.mood-form-container,
+.mood-graph-container,
+.calendar-container,
+.notes-wrapper {
+  background: white;
+  padding: 24px;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Responsive Layout */
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .container {
+    padding: 15px;
   }
+
+  .notes-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .calendar-grid {
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+  }
+
+  .header h1 {
+    font-size: 1.6rem;
+  }
+
+  .header button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
+
+/* Dark Mode */
+body.dark {
+  background: #1e1e1e; /* Dark background */
+  color: white; /* White text */
+}
+
+body.dark .container {
+  background-color: #2b2b2b; /* Dark background for container */
+  box-shadow: 10px 12px 25px rgba(0, 0, 0, 0.2); /* Darker shadow */
+}
+
+body.dark .header {
+  color: #fff; /* White text in the header */
+}
+
+body.dark .header h1 {
+  color: #fff; /* White title in the header */
+}
+
+body.dark .header button {
+  background-color: #444; /* Darker button background */
+  color: white; /* White text on button */
+  border: 1px solid #555; /* Lighter border */
+}
+
+body.dark .header button:hover {
+  background-color: #666; /* Lighter background on hover */
+}
+
+body.dark .mood-form-container,
+body.dark .mood-graph-container,
+body.dark .calendar-container,
+body.dark .notes-wrapper {
+  background: #333; /* Dark background for containers */
+  color: #fff; /* White text */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Darker shadow */
+  border: 1px solid #444; /* Dark border */
+}
+
+/* Notes Section */
+body.dark .note-card {
+  background: #444; /* Dark background for note cards */
+  color: white; /* White text */
+  border: 1px solid #555; /* Light border */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Darker shadow */
+}
+
+body.dark .note-card .emoji {
+  color: #fff; /* White emojis */
+}
+
+body.dark .note-card .note-text {
+  color: #ddd; /* Slightly lighter text for readability */
+}
+
+body.dark .note-footer {
+  color: #bbb; /* Light grey footer text */
+}
+
+body.dark .note-footer .date,
+body.dark .note-footer .weather {
+  color: #ccc; /* Lighter date and weather text */
+}
+
+body.dark .weather {
+  color: #f0f0f0; /* Light weather text */
 }
